@@ -1,19 +1,26 @@
 import {Col, Image, Row} from "react-bootstrap";
 import React from "react";
 
-class BookList extends React.Component{
+class BookList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            covers: []
+        };
+    }
+
+    componentDidMount() {
+        fetch("http://localhost:8080/api/v1/books")
+            .then((data) => data.json())
+            .then(data => this.setState({covers: data.data}))
+            .catch(console.error);
+    }
 
     render() {
-        const covers = [
-            {"id": "1", "cover": "https://salttiger.com/wp-content/uploads/2020/12/1-7.jpg"},
-            {"id": "2", "cover": "https://salttiger.com/wp-content/uploads/2019/03/1-5.jpg"},
-            {"id": "3", "cover": "https://salttiger.com/wp-content/uploads/2021/12/1-21.jpg"},
-        ];
-
-        let books = covers.map((item) => {
+        let books = this.state.covers.map((item) => {
             return (
                 <Col className="BookContainer hvr-shrink" key={item.id}>
-                    <Image src={item.cover} key={item.id}/>
+                    <Image src={item.cover} key={item.id} rounded={true}/>
                 </Col>
             )
         });
