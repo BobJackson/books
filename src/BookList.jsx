@@ -19,14 +19,14 @@ class BookList extends React.Component {
     render() {
         let books = this.state.covers.map((item) => {
             return (
-                <Col className="BookContainer hvr-shrink" key={item.id}>
+                <Col className="BookContainer hvr-shrink mt-2" key={item.id}>
                     <Image src={item.cover} key={item.id} rounded={true}/>
                 </Col>
             )
         });
 
         return (
-            <Row className="mt-2">
+            <Row className="mt-2" md={3} lg={4}>
                 {books}
             </Row>
         );
