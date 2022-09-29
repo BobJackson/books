@@ -15,7 +15,7 @@ class BookList extends React.Component {
         if (env === 'development') {
             baseUrl = "http://host.docker.internal:8080"
         } else if (env === 'production') {
-            baseUrl = "https://books.wangyousong.com/api"
+            baseUrl = "https://books.wangyousong.com"
         }
         console.log(baseUrl);
 
