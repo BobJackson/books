@@ -10,7 +10,16 @@ class BookList extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://host.docker.internal:8080/api/v1/books")
+        let env = process.env.NODE_ENV
+        let baseUrl = ''
+        if (env === 'development') {
+            baseUrl = "http://host.docker.internal:8080"
+        } else if (env === 'production') {
+            baseUrl = "https://books.wangyousong.com/api"
+        }
+        console.log(baseUrl);
+
+        fetch(baseUrl + '/api/v1/books')
             .then((data) => data.json())
             .then(data => this.setState({covers: data.data}))
             .catch(console.error);
