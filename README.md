@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## deploy steps
+
+1. write Dockerfile for frontend
+2. use right ip:host to request data
+3. write nginx config for frontend
+4. write Dockerfile for backend
+5. write nginx config for backend
+6. start nginx-react service and backend-api service
+
 ## Available Scripts
 
 In the project directory, you can run:

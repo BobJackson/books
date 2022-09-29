@@ -10,7 +10,7 @@ class BookList extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/v1/books")
+        fetch("http://host.docker.internal:8080/api/v1/books")
             .then((data) => data.json())
             .then(data => this.setState({covers: data.data}))
             .catch(console.error);
