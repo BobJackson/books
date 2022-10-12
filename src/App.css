@@ -6,4 +6,8 @@
   cursor: pointer;
 }
 
+.BookContainer img {
+  max-height: 389px;
+}
+
 
