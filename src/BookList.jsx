@@ -19,7 +19,7 @@ class BookList extends React.Component {
         }
         console.log(baseUrl);
 
-        fetch(baseUrl + '/api/v1/books')
+        fetch(baseUrl + '/api/books/all')
             .then((data) => data.json())
             .then(data => this.setState({covers: data.data}))
             .catch(console.error);
