@@ -10,7 +10,7 @@ function WebsiteNav({onPublisherChange}) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#Manning" onClick={() => onPublisherChange('Manning')}>Manning</Nav.Link>
-                        <Nav.Link href="#OReilly">O'Reilly</Nav.Link>
+                        <Nav.Link href="#OReilly" onClick={() => onPublisherChange("O'Reilly")}>O'Reilly</Nav.Link>
                         <NavDropdown title="Languages" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Java</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
