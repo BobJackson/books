@@ -13,13 +13,13 @@ class BookList extends React.Component {
         let env = process.env.NODE_ENV
         let baseUrl = ''
         if (env === 'development') {
-            baseUrl = "http://host.docker.internal:8080"
+            baseUrl = "http://localhost:8080"
         } else if (env === 'production') {
             baseUrl = "https://books.wangyousong.com"
         }
         console.log(baseUrl);
 
-        fetch(baseUrl + '/api/books/all')
+        fetch(`${baseUrl}/api/books/all`)
             .then((data) => data.json())
             .then(data => this.setState({covers: data.data}))
             .catch(console.error);
