@@ -26,7 +26,9 @@ class BookList extends React.Component {
     }
 
     render() {
-        let books = this.state.covers.map((item) => {
+        let books = this.state.covers
+            .filter(item => !this.props.publisher || item.publisher === this.props.publisher)
+            .map((item) => {
             return (
                 <Col className="BookContainer hvr-shrink mt-2" key={item.id}>
                     <Image src={item.cover} key={item.id} rounded={true} fluid={true}/>
