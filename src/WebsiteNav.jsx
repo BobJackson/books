@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 
 function WebsiteNav({onPublisherChange}) {
     return (
@@ -11,17 +11,6 @@ function WebsiteNav({onPublisherChange}) {
                     <Nav className="me-auto">
                         <Nav.Link href="#Manning" onClick={() => onPublisherChange('Manning')}>Manning</Nav.Link>
                         <Nav.Link href="#OReilly" onClick={() => onPublisherChange("O'Reilly")}>O'Reilly</Nav.Link>
-                        <NavDropdown title="Languages" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Java</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                JavaScript
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Scala</NavDropdown.Item>
-                            <NavDropdown.Divider/>
-                            <NavDropdown.Item href="#action/3.4">
-                                C
-                            </NavDropdown.Item>
-                        </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
