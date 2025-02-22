@@ -5,7 +5,7 @@ function WebsiteNav({onPublisherChange}) {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">Programming-Books</Navbar.Brand>
+                <Navbar.Brand href="#home" onClick={() => onPublisherChange(null)}>Programming-Books</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
